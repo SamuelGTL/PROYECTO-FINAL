@@ -1,3 +1,15 @@
+<php
+ $servidor="localhost";
+    $usuario="root";
+    $clave="";
+    $BaseDeDatos="formulario";
+      $enlace=mysqli_connect($servidor,$usuario,$clave,$BaseDeDatos);
+      if(!enlace)
+      {
+      echo'Error en la conexion con el servidor';
+      }
+>
+
 <!DOCTYPE html>
 <html lang="">
 <head>
@@ -38,12 +50,20 @@
   </div>
 </div></form></div>
     <div class="w-100">  <div class="form-group">
+        
+     ////////////////   
         <label for="formGroupExampleInput"><h3>Que tipo de encargo desea realizar?</h3></label>
     <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Inserte su Pedido">
   </div>
   <div class="form-group">
-      <label for="formGroupExampleInput2"> <h3>Desea añadir alguna fecha de entrega preferencial?. Se le informara de la entrega al confirmar el encargo</h3></label>
+      <label for="formGroupExampleInput2"> <h3>Desea añadir alguna fecha de entrega preferencial?. Se le informara de la entrega al confirmar el encargo</h3></label> 
     <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Alguna fecha especifica?">
+      
+     ////////////////////// 
+      <br />
+      <button  align="center" type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" value="registrarse">
+  Enviar Formulario
+</button>
   </div></div>  
     <div class="col" ><div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
@@ -73,17 +93,28 @@
         <li><a href="Pagina 2.html">Clcick aqui para entrar a "Mas Informacion"</li>
          <li><a href="Pagina%203.html">Clcick aqui para entrar a "Pedidos Genericos"</li>
           <li><a href="Pagina%204.html">Clcick aqui para entrar a "Contacto"</li>
-              <li><a href="Pagina%205.html">Clcick aqui para entrar a "Reportar Problema"</li>
+        <li><a href="Pagina%205.html">Clcick aqui para entrar a "Reportar Problema"</a></li>
+        <li><a href="TablaPedidos.html">Clcick aqui para entrar a "Tabla de Pedidos"</a></li>
     </ul>
         </div>
   </div>
-</div>
-    
-    
-    
-    
-    
+</div>   
  </body>
     
 </html>
+<php
+    if(isset($_POST['registrarse'])
+    {
+    $ARTICULO=$_POST["Producto"];
+     $fechas=$_POST["Fechas"];
+    
+    $insertarDatos = "INSERT INTO datos VALUES('$Producto',
+                                                '$Fechas')";
+     
+     $ejecutarInsertar = mysqli_query($enlace, $insertarDatos);
+     
+     
+    }
+>
+
         

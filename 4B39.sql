@@ -1,0 +1,12 @@
+DROP DATABASE IF EXIST PEDIDOS;
+CREATE DATABASE PEDIDOS;
+
+CREATE TABLE    Tabla1{
+    
+    Tabla1 CHAR(1)PRIMARY KEY NOT NULL,
+};
+CREATE TABLE FechasEntrega{
+
+    Fechas CHAR(6) PRIMARY KEY NOT NULL,
+};
+INSERT INTO Tabla1 VALUES ('Silla','Mesa','Marco','Estante');
